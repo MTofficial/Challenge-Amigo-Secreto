@@ -44,11 +44,22 @@ function sortearAmigo() {
 
 }
 
+/*Esta funcion permite limpiar la casilla de input para el nombre de los amigos.
+Se setea el valor de la casilla como vacio a traves de query selector y el DOM.
+*/
 function limpiarTexto() {
     document.querySelector('#amigo').value = '';
     return;
 }
 
+/*Esta funciona permite mostrar en un campo de lista los nombres ingresados de los amigos
+Primero se crea una constante que guarde el elemento <ul> desde el html.
+Luego se limpia este elemento para que no queden alementos de una ejecucion anterior.
+Posteriormente se realiza un ciclo for que realiza lo siguiente:
+    genera una constante llama li que hace referencia a un elemento <li> de html.
+    luego a esa constante se le asigna el valor que tiene la lista amigo en esa posicion del index del ciclo for.
+    Finalmente agrega este nuevo elemento li a nuestra lista html llamada listaElement.
+*/
 function mostrarTexto() {
     const listaElement = document.getElementById('listaAmigos');
     listaElement.innerHTML = '';
@@ -59,6 +70,11 @@ function mostrarTexto() {
     }
 }
 
+/*Esta funcion limpiar los datos despues de una ejecucion del programa para que inice correctamente cada nuevo juego.
+Primero se crea una constante que contendra el elemento <ul> del html llamado listaAmigos.
+Depues limpiar este campo dandole un valor vacio a traves de innerHTML.
+Finalmente limpiar la lista Amigo dandole nuevamente un valor inicial vacio.
+*/
 function limpiarNombres() {
     const listaAmigosIngresados= document.getElementById('listaAmigos');
     listaAmigosIngresados.innerHTML='';
